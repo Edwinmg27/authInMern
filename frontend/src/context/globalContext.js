@@ -7,8 +7,18 @@ const GlobalContext = React.createContext()
 
 export const GlobalProvider = ({ children }) => {
   const [incomes, setIncomes] = useState([])
+  const [user, setUser] = useState(null)
   const [expenses, setExpenses] = useState([])
   const [error, setError] = useState(null)
+
+  const getUser = async (token) => {
+    const response = await axios.get(`${BASE_URL}user?token=${token}`)
+      .catch((err) => {
+        setError(err.response.data.message)
+      })
+	  setUser(response.data);
+	  console.log(response.data)
+  }
 
   // calculate incomes
   const addIncome = async (income) => {
@@ -83,6 +93,8 @@ export const GlobalProvider = ({ children }) => {
 
   return (
     <GlobalContext.Provider value={{
+		getUser,
+		user,
       addIncome,
       getIncomes,
       incomes,

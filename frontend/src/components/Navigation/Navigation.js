@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
 
-function Navigation ({ active }) {
+function Navigation ({ active, user }) {
+	console.log(user, "usuario");
   return (
     <NavStyled>
       <div className='user-con'>
         <img src={avatar} alt='' />
         <div className='text'>
-          <h2>Mike</h2>
+          <h2>{user?.firstName}</h2>
           {/* <p>Your Money</p> */}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import styled from 'styled-components'
 import bg from './img/bg.png'
 import { MainLayout } from './styles/Layouts'
@@ -13,9 +13,14 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 
 function App() {
-	const [active, setActive] = useState(1)
+	const [active] = useState(1)
+	const { user, getUser } = useGlobalContext()
 
-	const user = localStorage.getItem("token")
+	const token = localStorage.getItem("token")
+
+	useEffect(() => {
+		getUser(token);
+	  }, [token])
 
 	const orbMemo = useMemo(() => {
 	  return <Orb />
@@ -23,33 +28,33 @@ function App() {
 
   return (
 	<Routes>
-		{user && <Route path="/" exact element={
+		{token && <Route path="/" exact element={
 			<AppStyled bg={bg} className='App'>
 				{orbMemo}
 				<MainLayout>
-					<Navigation active={active} setActive={setActive} />
+					<Navigation active={active} user={user} />
 					<main>
 						<Dashboard />
 					</main>
 				</MainLayout>
 			</AppStyled>
 		} />}
-		{user && <Route path="/income" exact element={
+		{token && <Route path="/income" exact element={
 			<AppStyled bg={bg} className='App'>
 				{orbMemo}
 				<MainLayout>
-					<Navigation active={active} setActive={setActive} />
+					<Navigation active={active} user={user} />
 					<main>
 						<Income />
 					</main>
 				</MainLayout>
 			</AppStyled>
 		} />}
-		{user && <Route path="/expenses" exact element={
+		{token && <Route path="/expenses" exact element={
 			<AppStyled bg={bg} className='App'>
 				{orbMemo}
 				<MainLayout>
-					<Navigation active={active} setActive={setActive} />
+					<Navigation active={active} user={user} />
 					<main>
 						<Expenses />
 					</main>

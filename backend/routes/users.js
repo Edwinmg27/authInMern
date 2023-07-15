@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, validate } = require("../models/user");
 const bcrypt = require("bcrypt");
+const jwt = require('jsonwebtoken');
 
 router.post("/users", async(req,res) => {
 	try {
@@ -20,6 +21,11 @@ router.post("/users", async(req,res) => {
 	} catch (error) {
 		res.status(500).send({message:"Internal Server Error"})
 	}
+}).get("/user", async(req,res) => {
+	const token = req.query.token;
+	const decodedToken = jwt.decode(token);
+	const user = await User.findOne({ id: decodedToken.id});
+	res.json(user);
 })
 
 module.exports = router;
