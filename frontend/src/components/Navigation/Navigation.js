@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
 
+
+const handleLogout = () => {
+	localStorage.removeItem("token");
+	window.location.reload();
+}
+
 function Navigation ({ active, user }) {
 	console.log(user, "usuario");
   return (
@@ -29,7 +35,7 @@ function Navigation ({ active, user }) {
         })}
       </ul>
       <div className='bottom-nav'>
-        <li>
+        <li onClick={handleLogout}>
           {signout} Sign Out
         </li>
       </div>

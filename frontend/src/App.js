@@ -64,6 +64,8 @@ function App() {
 		{<Route path="/signup" exact element={<Signup/>} />}
 		{<Route path="/login" exact element={<Login/>} />}
 		{<Route path="/" exact element={<Navigate replace to="/login"/>} />}
+		{<Route path="/income" exact element={<Navigate replace to="/login"/>} />}
+		{<Route path="/expenses" exact element={<Navigate replace to="/login"/>} />}
 	</Routes>
   );
 }
