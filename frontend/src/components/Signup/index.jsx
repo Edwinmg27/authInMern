@@ -20,13 +20,13 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/users";
+			const url = "http://localhost:5000/api/v1/users";
 			const {data:res} = await axios.post(url, data);
 			navigate("/login")
 			console.log(res.message);
 		} catch (error) {
 			if(error.response &&
-				error.response.status >= 400 && 
+				error.response.status >= 400 &&
 				error.response.status <= 500
 				){
 					setError(error.response.data.message)
@@ -48,7 +48,7 @@ const Signup = () => {
 				<div className={styles.right}>
 					<form className={styles.form_container} onSubmit={handleSubmit}>
 						<h1>Create Account</h1>
-						<input 
+						<input
 							type="text"
 							placeholder='First Name'
 							name='firstName'
@@ -57,7 +57,7 @@ const Signup = () => {
 							required
 							className={styles.input}
 						/>
-						<input 
+						<input
 							type="text"
 							placeholder='Last Name'
 							name='lastName'
@@ -66,7 +66,7 @@ const Signup = () => {
 							required
 							className={styles.input}
 						/>
-						<input 
+						<input
 							type="email"
 							placeholder='Email'
 							name='email'
@@ -75,7 +75,7 @@ const Signup = () => {
 							required
 							className={styles.input}
 						/>
-						<input 
+						<input
 							type="password"
 							placeholder='Password'
 							name='password'

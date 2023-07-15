@@ -1,10 +1,11 @@
 // import React, { useState } from 'react'
 import styled from 'styled-components'
 import avatar from '../../img/avatar.png'
+import { Link } from 'react-router-dom';
 import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
 
-function Navigation ({ active, setActive }) {
+function Navigation ({ active }) {
   return (
     <NavStyled>
       <div className='user-con'>
@@ -17,14 +18,12 @@ function Navigation ({ active, setActive }) {
       <ul className='menu-items'>
         {menuItems.map((item) => {
           return (
-            <li
-              key={item.id}
-              onClick={() => setActive(item.id)}
-              className={active === item.id ? 'active' : ''}
-            >
-              {item.icon}
-              <span>{item.title}</span>
-            </li>
+			<Link to={item.link}>
+				{item.icon}
+				<button type='button' className={active === item.id ? 'active' : ''}>
+					{item.title}
+				</button>
+			</Link>
           )
         })}
       </ul>

@@ -17,13 +17,13 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/auth";
+			const url = "http://localhost:5000/api/v1/auth";
 			const {data:res} = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/"
 		} catch (error) {
 			if(error.response &&
-				error.response.status >= 400 && 
+				error.response.status >= 400 &&
 				error.response.status <= 500
 				){
 					setError(error.response.data.message)
@@ -36,8 +36,8 @@ const Signup = () => {
 			<div className={styles.login_form_container}>
 				<div className={styles.left}>
 				<form className={styles.form_container} onSubmit={handleSubmit}>
-						<h1>Loggin to your Account</h1>						
-						<input 
+						<h1>Loggin to your Account</h1>
+						<input
 							type="email"
 							placeholder='Email'
 							name='email'
@@ -46,7 +46,7 @@ const Signup = () => {
 							required
 							className={styles.input}
 						/>
-						<input 
+						<input
 							type="password"
 							placeholder='Password'
 							name='password'
@@ -68,7 +68,7 @@ const Signup = () => {
 							Sign Up
 						</button>
 					</Link>
-					
+
 				</div>
 			</div>
 		</div>
