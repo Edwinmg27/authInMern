@@ -32,7 +32,7 @@ function App() {
 			<AppStyled bg={bg} className='App'>
 				{orbMemo}
 				<MainLayout>
-					<Navigation active={active} user={user} />
+					<Navigation active={active} setActive={setActive} user={user} />
 					<main>
 						<Dashboard />
 					</main>
@@ -54,7 +54,7 @@ function App() {
 			<AppStyled bg={bg} className='App'>
 				{orbMemo}
 				<MainLayout>
-					<Navigation active={active} user={user} />
+					<Navigation active={active} setActive={setActive} user={user} />
 					<main>
 						<Expenses />
 					</main>

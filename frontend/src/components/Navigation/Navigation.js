@@ -12,7 +12,6 @@ const handleLogout = () => {
 }
 
 function Navigation ({ active, user, setActive }) {
-	console.log(user, "usuario");
   return (
     <NavStyled>
       <div className='user-con'>
@@ -25,11 +24,9 @@ function Navigation ({ active, user, setActive }) {
       <ul className='menu-items'>
         {menuItems.map((item) => {
           return (
-			<Link to={item.link} className='activador'>
-				<li key={item.id} className={active === item.id ? 'active' : ''}>
-					{item.icon}
-					<span>{item.title}</span>
-				</li>	
+			<Link onClick={() => setActive(item.id)} to={item.link} key={item.id} className={active === item.id ? 'active' : ''}>			
+				{item.icon}
+				<span>{item.title}</span>				
 			</Link>
 						
           )
@@ -78,12 +75,14 @@ const NavStyled = styled.nav`
             color: rgba(34, 34, 96, .6);
         }
     }
-
+	.bottom-nav{
+		cursor: pointer;
+	}
     .menu-items{
         flex: 1;
         display: flex;
         flex-direction: column;
-         .activador > li{
+         a{
             display: grid;
             grid-template-columns: 40px auto;
             align-items: center;
