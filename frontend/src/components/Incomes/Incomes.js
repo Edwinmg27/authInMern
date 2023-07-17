@@ -10,9 +10,10 @@ function Income () {
   const { user, addIncome, incomes, getIncomes, deleteIncome, totalIncome } = useGlobalContext()
 
   useEffect(() => {
-	console.log(user, "incomes")
-    //getIncomes(user.id)
-  }, [])
+	if(user != null) {
+		getIncomes(user._id)
+ 	}
+  }, [user])
   return (
     <IncomeStyled>
       <InnerLayout>

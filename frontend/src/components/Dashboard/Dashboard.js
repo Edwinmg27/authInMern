@@ -9,10 +9,10 @@ import Chart from '../Chart/Chart'
 function Dashboard () {
   const { user, totalExpenses, incomes, expenses, totalIncome, totalBalance, getIncomes, getExpenses } = useGlobalContext()
 
-  useEffect(() => {if (user != null) {
-	console.log(user, "dash")
-	getIncomes(user._id)
-    getExpenses(user._id)
+  useEffect(() => {if (
+	user != null) {
+		getIncomes(user._id)
+		getExpenses(user._id)
  	}
   }, [user])
 

@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Button ({ name, icon, onClick, bg, bPad, color, bRad }) {
+function Button ({ name, icon, onClick, bg, bPad, color, bRad, disabled }) {
+
   return (
     <ButtonStyled
+	 disabled={disabled}
       style={{
         background: bg,
         padding: bPad,

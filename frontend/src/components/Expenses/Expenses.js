@@ -7,11 +7,13 @@ import IncomeItem from '../IncomeItem/IncomeItem'
 import ExpenseForm from './ExpenseForm'
 
 function Expenses () {
-  const { expenses, getExpenses, deleteExpense, totalExpenses } = useGlobalContext()
+  const { user, expenses, getExpenses, deleteExpense, totalExpenses } = useGlobalContext()
 
   useEffect(() => {
-    getExpenses()
-  }, [])
+	if(user != null) {
+		getExpenses(user._id)
+ 	}
+  }, [user])
   return (
     <ExpenseStyled>
       <InnerLayout>
@@ -24,7 +26,6 @@ function Expenses () {
           <div className='incomes'>
             {expenses.map((income) => {
               const { _id, title, amount, date, category, description, type } = income
-              console.log(income)
               return (
                 <IncomeItem
                   key={_id}

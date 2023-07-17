@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -26,7 +26,6 @@ function Form () {
 
   const handleSubmit = e => {
     e.preventDefault()
-	console.log(user, "formul")
     addIncome(inputState)
     setInputState({
 		user: user?._id,
@@ -37,7 +36,10 @@ function Form () {
       description: ''
     })
   }
-
+  useEffect(() => {
+    setInputState({
+		user: user?._id})
+  }, [user])
   return (
     <FormStyled onSubmit={handleSubmit}>
       {error && <p className='error'>{error}</p>}
@@ -87,7 +89,7 @@ function Form () {
         <textarea name='description' value={description} placeholder='Agrega una referencia' id='description' cols='30' rows='4' onChange={handleInput('description')} />
       </div>
       <div className='submit-btn'>
-        <Button
+        <Button disabled ={user == null ? "disabled" : ""}
           name='Agregar ingresos'
           icon={plus}
           bPad='.8rem 1.6rem'

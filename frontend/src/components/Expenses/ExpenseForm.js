@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -36,6 +36,10 @@ function ExpenseForm () {
       description: ''
     })
   }
+  useEffect(() => {
+    setInputState({
+		user: user?._id})
+  }, [user])
 
   return (
     <ExpenseFormStyled onSubmit={handleSubmit}>

@@ -12,7 +12,6 @@ const handleLogout = () => {
 }
 
 function Navigation ({ active, user }) {
-	console.log(user, "usuario");
   return (
     <NavStyled>
       <div className='user-con'>
