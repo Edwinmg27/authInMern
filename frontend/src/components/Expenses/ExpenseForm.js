@@ -7,8 +7,9 @@ import Button from '../Button/Button'
 import { plus } from '../../utils/Icons'
 
 function ExpenseForm () {
-  const { addExpense, error, setError } = useGlobalContext()
+  const { user, addExpense, error, setError } = useGlobalContext()
   const [inputState, setInputState] = useState({
+	user: user?._id,
     title: '',
     amount: '',
     date: '',
@@ -27,6 +28,7 @@ function ExpenseForm () {
     e.preventDefault()
     addExpense(inputState)
     setInputState({
+		user: user?._id,
       title: '',
       amount: '',
       date: '',

@@ -34,7 +34,8 @@ exports.addExpenses = async (req, res) => {
 exports.getExpenses = async (req, res) => {
  // Este es nuetro metodo para obtener  los ingresos
 	try {
-		const expense = await ExpenseSchema.find().sort({createdAt: -1})
+		const {userid} = req.params;
+		const expense = await ExpenseSchema.find({ user: userid}).sort({createdAt: -1})
 		res.status(200).json(expense)
 	} catch (error) {
 		res.status(500).json({message: 'Server Error'})

@@ -12,7 +12,7 @@ function Dashboard () {
   useEffect(() => {if (user != null) {
 	console.log(user, "dash")
 	getIncomes(user._id)
-    getExpenses()
+    getExpenses(user._id)
  	}
   }, [user])
 

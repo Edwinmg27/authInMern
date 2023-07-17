@@ -2,7 +2,7 @@ const IncomeSchema = require("../models/IncomeModels")
 
 exports.addIncome = async (req, res) => {
 	// vamos a obtener los datos que vamos agregar a la base de datos
-	const {user, title, amount, category, description, date} = req.body
+	const { user, title, amount, category, description, date} = req.body
 
 	const income = IncomeSchema({
 		// creamos una instancia de IncomeSchema
