@@ -7,8 +7,9 @@ import Button from '../Button/Button'
 import { plus } from '../../utils/Icons'
 
 function Form () {
-  const { addIncome, error, setError } = useGlobalContext()
+  const { user, addIncome, error, setError } = useGlobalContext()
   const [inputState, setInputState] = useState({
+	user: user?._id,
     title: '',
     amount: '',
     date: '',
@@ -25,8 +26,10 @@ function Form () {
 
   const handleSubmit = e => {
     e.preventDefault()
+	console.log(user, "formul")
     addIncome(inputState)
     setInputState({
+		user: user?._id,
       title: '',
       amount: '',
       date: '',

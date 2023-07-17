@@ -29,8 +29,8 @@ export const GlobalProvider = ({ children }) => {
     getIncomes()
   }
 
-  const getIncomes = async () => {
-    const response = await axios.get(`${BASE_URL}get-incomes`)
+  const getIncomes = async (userid) => {
+    const response = await axios.get(`${BASE_URL}get-incomes/${userid}`)
     setIncomes(response.data)
     console.log(response.data)
   }
@@ -58,8 +58,8 @@ export const GlobalProvider = ({ children }) => {
     getExpenses()
   }
 
-  const getExpenses = async () => {
-    const response = await axios.get(`${BASE_URL}get-expenses`)
+  const getExpenses = async (userid) => {
+    const response = await axios.get(`${BASE_URL}get-expenses/${userid}`)
     setExpenses(response.data)
     console.log(response.data)
   }
@@ -93,8 +93,8 @@ export const GlobalProvider = ({ children }) => {
 
   return (
     <GlobalContext.Provider value={{
-		getUser,
-		user,
+	getUser,
+	user,
       addIncome,
       getIncomes,
       incomes,

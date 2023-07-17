@@ -25,7 +25,7 @@ router.post("/users", async(req,res) => {
 	const token = req.query.token;
 	const decodedToken = jwt.decode(token);
 	if(decodedToken != null){
-		const user = await User.findOne({ id: decodedToken.id});
+		const user = await User.findById(decodedToken._id);
 		res.json(user);
 	}
 })

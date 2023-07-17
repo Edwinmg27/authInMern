@@ -18,7 +18,7 @@ function App() {
 
 	const token = localStorage.getItem("token")
 
-	useEffect(() => {
+	useEffect(() => {console.log(token)
 		getUser(token);
 	  }, [token])
 

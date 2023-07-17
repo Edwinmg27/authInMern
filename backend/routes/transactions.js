@@ -5,10 +5,10 @@ const router = require('express').Router() //Utilice el middleware express.Route
 
 
 router.post('/add-income', addIncome) // el metodo addIncome vendra de los controllers 
-	.get('/get-incomes', getIncomes)
+	.get('/get-incomes/:userid', getIncomes)
 	.delete('/delete-income/:id', deleteIncome)
 	.post('/add-expense', addExpenses)
-	.get('/get-expenses', getExpenses)
+	.get('/get-expenses/:userid', getExpenses)
 	.delete('/delete-expense/:id', deleteExpense)
 
 module.exports = router

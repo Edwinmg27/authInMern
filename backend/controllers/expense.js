@@ -1,11 +1,12 @@
-const ExpenseSchema = require("../models/expenseModels")
+const ExpenseSchema = require("../models/ExpenseModels")
 
 exports.addExpenses = async (req, res) => {
 	// vamos a obtener los datos que vamos agregar a la base de datos
-	const {title, amount, category, description, date} = req.body
+	const { user, title, amount, category, description, date} = req.body
 
 	const expense = ExpenseSchema({
 		// creamos una instancia de IncomeSchema
+		user,
 		title,
 		amount,
 		category,

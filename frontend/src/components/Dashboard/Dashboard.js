@@ -7,12 +7,14 @@ import { dollar } from '../../utils/Icons'
 import Chart from '../Chart/Chart'
 
 function Dashboard () {
-  const { totalExpenses, incomes, expenses, totalIncome, totalBalance, getIncomes, getExpenses } = useGlobalContext()
+  const { user, totalExpenses, incomes, expenses, totalIncome, totalBalance, getIncomes, getExpenses } = useGlobalContext()
 
-  useEffect(() => {
-    getIncomes()
+  useEffect(() => {if (user != null) {
+	console.log(user, "dash")
+	getIncomes(user._id)
     getExpenses()
-  }, [])
+ 	}
+  }, [user])
 
   return (
     <DashboardStyled>
