@@ -37,6 +37,7 @@ function Income () {
                   category={category}
                   indicatorColor='var(--color-green)'
                   deleteItem={deleteIncome}
+				  userid={user._id}
                 />
               )
             })}

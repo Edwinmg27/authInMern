@@ -13,7 +13,8 @@ function IncomeItem ({
   description,
   deleteItem,
   indicatorColor,
-  type
+  type,
+  userid
 }) {
   const categoryIcon = () => {
     switch (category) {
@@ -61,7 +62,6 @@ function IncomeItem ({
     }
   }
 
-
   return (
     <IncomeItemStyled indicator={indicatorColor}>
       <div className='icon'>
@@ -87,7 +87,7 @@ function IncomeItem ({
               color='#fff'
               iColor='#fff'
               hColor='var(--color-green)'
-              onClick={() => deleteItem(id)}
+              onClick={() => userid != null ? deleteItem(id, userid) : null}
             />
           </div>
         </div>

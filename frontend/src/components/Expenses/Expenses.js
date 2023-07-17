@@ -38,6 +38,7 @@ function Expenses () {
                   category={category}
                   indicatorColor='var(--color-green)'
                   deleteItem={deleteExpense}
+				  userid={user._id}
                 />
               )
             })}

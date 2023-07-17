@@ -13,7 +13,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 
 function App() {
-	const [active] = useState(1)
+	const [active, setActive] = useState(1)
 	const { user, getUser } = useGlobalContext()
 
 	const token = localStorage.getItem("token")
@@ -43,7 +43,7 @@ function App() {
 			<AppStyled bg={bg} className='App'>
 				{orbMemo}
 				<MainLayout>
-					<Navigation active={active} user={user} />
+					<Navigation active={active} setActive={setActive} user={user} />
 					<main>
 						<Income />
 					</main>
