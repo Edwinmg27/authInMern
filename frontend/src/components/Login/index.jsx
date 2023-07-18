@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import front from '../../img/front.jpg'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styles from './style.module.css';
@@ -36,7 +37,8 @@ const Signup = () => {
 			<div className={styles.login_form_container}>
 				<div className={styles.left}>
 				<form className={styles.form_container} onSubmit={handleSubmit}>
-						<h1>Loggin to your Account</h1>
+					<img src={front} alt="" className={styles.front} />
+						<h1>Inicia sesión en tu cuenta</h1>
 						<input
 							type="email"
 							placeholder='Email'
@@ -57,15 +59,15 @@ const Signup = () => {
 						/>
 						{ error && <div className={styles.error_msg}>{error}</div>}
 						<button type='submit' className={styles.green_btn}>
-							Sign In
+							Ingresar
 						</button>
 					</form>
 				</div>
 				<div className={styles.right}>
-				<h1>New Here?</h1>
+				<h1>Eres nuevo?</h1>
 					<Link to="/signup">
 						<button type='button' className={styles.white_btn}>
-							Sign Up
+							Registrarse
 						</button>
 					</Link>
 

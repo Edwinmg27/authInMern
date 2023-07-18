@@ -37,19 +37,19 @@ const Signup = () => {
 		<div className={styles.signup_container}>
 			<div className={styles.signup_form_container}>
 				<div className={styles.left}>
-					<h1>Welcome Back</h1>
+					<h1>Bienvenido</h1>
 					<Link to="/login">
 						<button type='button' className={styles.white_btn}>
-							Sign in
+							Iniciar sesión
 						</button>
 					</Link>
 				</div>
 				<div className={styles.right}>
 					<form className={styles.form_container} onSubmit={handleSubmit}>
-						<h1>Create Account</h1>
+						<h1>Crear cuenta</h1>
 						<input
 							type="text"
-							placeholder='First Name'
+							placeholder='Ingresa un nombre'
 							name='firstName'
 							onChange={handleChange}
 							value={data.firstName}
@@ -58,7 +58,7 @@ const Signup = () => {
 						/>
 						<input
 							type="text"
-							placeholder='Last Name'
+							placeholder='Ingresa un apellido'
 							name='lastName'
 							onChange={handleChange}
 							value={data.lastName}
@@ -76,7 +76,7 @@ const Signup = () => {
 						/>
 						<input
 							type="password"
-							placeholder='Password'
+							placeholder='Ingresa tu clave'
 							name='password'
 							onChange={handleChange}
 							value={data.password}
@@ -85,7 +85,7 @@ const Signup = () => {
 						/>
 						{ error && <div className={styles.error_msg}>{error}</div>}
 						<button type='submit' className={styles.green_btn}>
-							Sign Up
+							Registrarse
 						</button>
 					</form>
 				</div>
