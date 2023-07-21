@@ -11,6 +11,7 @@ import Expenses from './components/Expenses/Expenses'
 import { useGlobalContext } from './context/globalContext'
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Transaccions from './components/Transaccions/Transaccions';
 
 function App() {
 	const [active, setActive] = useState(1)
@@ -35,6 +36,17 @@ function App() {
 					<Navigation active={active} setActive={setActive} user={user} />
 					<main>
 						<Dashboard />
+					</main>
+				</MainLayout>
+			</AppStyled>
+		} />}
+		{token && <Route path="/transaccions" exact element={
+			<AppStyled bg={bg} className='App'>
+				{orbMemo}
+				<MainLayout>
+					<Navigation active={active} setActive={setActive} user={user} />
+					<main>
+						<Transaccions />
 					</main>
 				</MainLayout>
 			</AppStyled>
@@ -64,6 +76,7 @@ function App() {
 		{<Route path="/signup" exact element={<Signup/>} />}
 		{<Route path="/login" exact element={<Login/>} />}
 		{<Route path="/" exact element={<Navigate replace to="/login"/>} />}
+		{<Route path="/transaccions" exact element={<Navigate replace to="/login"/>} />}
 		{<Route path="/income" exact element={<Navigate replace to="/login"/>} />}
 		{<Route path="/expenses" exact element={<Navigate replace to="/login"/>} />}
 	</Routes>

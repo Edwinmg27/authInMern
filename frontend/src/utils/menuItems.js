@@ -11,7 +11,7 @@ export const menuItems = [
     id: 2,
     title: 'Ver Transacciones',
     icon: transactions,
-    link: '/'
+    link: '/transaccions'
   },
   {
     id: 3,
