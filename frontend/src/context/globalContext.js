@@ -49,7 +49,7 @@ export const GlobalProvider = ({ children }) => {
     return totalIncome
   }
 
-  // calculate incomes
+  // calculate expense
   const addExpense = async (expense) => {
     const response = await axios.post(`${BASE_URL}add-expense`, expense)
       .catch((err) => {
@@ -89,6 +89,7 @@ export const GlobalProvider = ({ children }) => {
 
     return history.slice(0, 3)
   }
+  
 
   return (
     <GlobalContext.Provider value={{

@@ -24,11 +24,11 @@ function Navigation ({ active, user, setActive }) {
       <ul className='menu-items'>
         {menuItems.map((item) => {
           return (
-			<Link onClick={() => setActive(item.id)} to={item.link} key={item.id} className={active === item.id ? 'active' : ''}>			
+			<Link onClick={() => setActive(item.id)} to={item.link} key={item.id} className={active === item.id ? 'active' : ''}>
 				{item.icon}
-				<span>{item.title}</span>				
+				<span>{item.title}</span>
 			</Link>
-						
+
           )
         })}
       </ul>
@@ -46,7 +46,7 @@ const NavStyled = styled.nav`
     width: 374px;
     height: 100%;
     background: rgba(252, 246, 249, 0.78);
-    border: 3px solid #FFFFFF;
+    border: 3px solid #116171;
     backdrop-filter: blur(4.5px);
     border-radius: 32px;
     display: flex;
@@ -77,6 +77,7 @@ const NavStyled = styled.nav`
     }
 	.bottom-nav{
 		cursor: pointer;
+		color: black;
 	}
     .menu-items{
         flex: 1;

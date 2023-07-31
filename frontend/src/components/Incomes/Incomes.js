@@ -36,7 +36,7 @@ function Income () {
                   date={date}
                   type={type}
                   category={category}
-                  indicatorColor='var(--color-green)'
+                  indicatorColor='var(--color-red)'
                   deleteItem={deleteIncome}
                 />
               )

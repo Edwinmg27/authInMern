@@ -24,5 +24,11 @@ export const menuItems = [
     title: 'Gastos',
     icon: expenses,
     link: '/expenses'
+  },
+  {
+    id: 5,
+    title: 'Pdf',
+    icon: expenses,
+    link: '/pdf'
   }
 ]

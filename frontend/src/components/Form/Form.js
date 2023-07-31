@@ -48,7 +48,7 @@ function Form () {
           type='text'
           value={title}
           name='title'
-          placeholder='Titulo del salario'
+          placeholder='Titulo del ingreso'
           onChange={handleInput('title')}
         />
       </div>
@@ -57,7 +57,7 @@ function Form () {
           value={amount}
           type='text'
           name='amount'
-          placeholder='Monto del salario'
+          placeholder='Monto del ingreso'
           onChange={handleInput('amount')}
         />
       </div>
@@ -94,8 +94,8 @@ function Form () {
           icon={plus}
           bPad='.8rem 1.6rem'
           bRad='30px'
-          bg='var(--color-accent'
-          color='#fff'
+        //   bg='var(--color-accent'
+        //   color='black'
         />
       </div>
     </FormStyled>
@@ -113,7 +113,7 @@ const FormStyled = styled.form`
         border: none;
         padding: .5rem 1rem;
         border-radius: 5px;
-        border: 2px solid #fff;
+        border: 2px solid #116171;
         background: transparent;
         resize: none;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
@@ -138,12 +138,18 @@ const FormStyled = styled.form`
             }
         }
     }
-
+	.submit-btn{
+		button{
+			border: 2px solid #106C96!important;
+		}
+	}
     .submit-btn{
         button{
             box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
             &:hover{
-                background: var(--color-green) !important;
+                // background: var(--color-green) !important;
+				background: #106C96!important;
+				color: white;
             }
         }
     }

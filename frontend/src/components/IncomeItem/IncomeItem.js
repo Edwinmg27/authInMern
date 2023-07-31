@@ -83,8 +83,8 @@ function IncomeItem ({
               icon={trash}
               bPad='1rem'
               bRad='50%'
-              bg='var(--primary-color'
-              color='#fff'
+              bg='white'
+              color='#800808'
               iColor='#fff'
               hColor='var(--color-green)'
               onClick={() => userid != null ? deleteItem(id, userid) : null}
@@ -97,7 +97,7 @@ function IncomeItem ({
 }
 
 const IncomeItemStyled = styled.div`
-    background: #FCF6F9;
+    background: #e5dee1;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     border-radius: 20px;

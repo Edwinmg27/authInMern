@@ -61,7 +61,7 @@ function Transaccions () {
                   date={date}
                   type={type}
                   category={category}
-                  indicatorColor='var(--color-green)'
+                  indicatorColor='var(--color-red)'
                   deleteItem={deleteExpense}
 				  userid={user._id}
                 />
@@ -82,7 +82,7 @@ const IncomeStyled = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #FCF6F9;
+        // background: #FCF6F9;
         border: 2px solid #FFFFFF;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
         border-radius: 20px;
@@ -90,13 +90,13 @@ const IncomeStyled = styled.div`
         margin: 1rem 0;
         font-size: 2rem;
         gap: .5rem;
-		background: #FCF6F9;
+		background: #e5dee1;
 		border: 2px solid #FFFFFF;
 		box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
 		border-radius: 20px;
 		padding: 1rem;
 		p{
-			color: var(--color-green);
+			color: #0a7b09;
 			opacity: 0.6;
 			font-size: 2.5rem;
             font-weight: 800;
@@ -106,7 +106,6 @@ const IncomeStyled = styled.div`
             font-weight: 800;
             color: var(--color-green);
         }
-
     }
     .income-content{
         display: flex;

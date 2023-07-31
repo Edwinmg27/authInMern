@@ -36,7 +36,7 @@ function Expenses () {
                   date={date}
                   type={type}
                   category={category}
-                  indicatorColor='var(--color-green)'
+                  indicatorColor='var(--color-red)'
                   deleteItem={deleteExpense}
 				  userid={user._id}
                 />
@@ -56,7 +56,7 @@ const ExpenseStyled = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #FCF6F9;
+        background: #e5dee1;
         border: 2px solid #FFFFFF;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
         border-radius: 20px;
@@ -67,7 +67,7 @@ const ExpenseStyled = styled.div`
         span{
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--color-green);
+            color: var(--color-red);
         }
     }
     .income-content{

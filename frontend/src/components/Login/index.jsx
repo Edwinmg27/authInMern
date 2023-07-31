@@ -41,7 +41,7 @@ const Signup = () => {
 						<h1>Inicia sesión en tu cuenta</h1>
 						<input
 							type="email"
-							placeholder='Email'
+							placeholder='Correo'
 							name='email'
 							onChange={handleChange}
 							value={data.email}
@@ -50,7 +50,7 @@ const Signup = () => {
 						/>
 						<input
 							type="password"
-							placeholder='Password'
+							placeholder='Contraseña'
 							name='password'
 							onChange={handleChange}
 							value={data.password}

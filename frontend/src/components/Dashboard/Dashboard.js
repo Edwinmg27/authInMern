@@ -46,7 +46,7 @@ function Dashboard () {
           </div>
           <div className='history-con'>
             <History />
-            <h2 className='salary-title'>Min <span>Salario</span>Max</h2>
+            <h2 className='salary-title'>Min <span>Ingresos</span>Max</h2>
             <div className='salary-item'>
               <p>
                 ${Math.min(...incomes.map(item => item.amount))}
@@ -79,6 +79,7 @@ const DashboardStyled = styled.div`
         .chart-con{
             grid-column: 1 / 4;
             height: 400px;
+			padding-top: 15px;
             .amount-con{
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -88,8 +89,8 @@ const DashboardStyled = styled.div`
                     grid-column: span 2;
                 }
                 .income, .expense, .balance{
-                    background: #FCF6F9;
-                    border: 2px solid #FFFFFF;
+                    background: #e5dee1;
+                    border: 2px solid #116171;
                     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
                     border-radius: 20px;
                     padding: 1rem;
@@ -98,6 +99,12 @@ const DashboardStyled = styled.div`
                         font-weight: 700;
                     }
                 }
+				.expense p{
+					color:#A50A0A;
+				}
+				.income p{
+					color:#21b572;
+				}
 
                 .balance{
                     grid-column: 2 / 4;
@@ -115,6 +122,9 @@ const DashboardStyled = styled.div`
         }
 
         .history-con{
+			.history-item{
+				background: #e5dee1;
+			}
             grid-column: 4 / -1;
             h2{
                 margin: 1rem 0;
@@ -129,7 +139,7 @@ const DashboardStyled = styled.div`
                 }
             }
             .salary-item{
-                background: #FCF6F9;
+                background: #e5dee1;
                 border: 2px solid #FFFFFF;
                 box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
                 padding: 1rem;
